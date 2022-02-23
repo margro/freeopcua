@@ -9,6 +9,7 @@
 ///
 
 #ifdef _WIN32
+#include <WinSock2.h>
 #include <windows.h>
 #endif
 
@@ -36,6 +37,7 @@
 
 
 #ifdef _WIN32
+#define SHUT_RDWR SD_BOTH
 #else
 #include <arpa/inet.h>
 #include <netdb.h>
