@@ -23,6 +23,13 @@
 #include <sstream>
 #include <vector>
 
+#ifdef _WIN32
+#ifdef min
+// Fix name clash with the min define from minwindef.h
+#undef min
+#endif
+#endif
+
 namespace OpcUa
 {
 
