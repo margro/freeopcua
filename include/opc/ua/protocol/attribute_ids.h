@@ -33,6 +33,11 @@ enum class AttributeId : uint32_t
   Historizing = 20,
   Executable = 21,
   UserExecutable = 22,
+  DataTypeDefinition = 23,
+  RolePermissions = 24,
+  UserRolePermissions = 25,
+  AccessRestrictions = 26,
+  AccessLevelEx = 27,
   Unknown = ~uint32_t(),
 };
 } // namespace OpcUa
