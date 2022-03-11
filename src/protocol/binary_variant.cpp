@@ -462,6 +462,11 @@ VariantType Variant::Type() const
   else if (t == typeid(DiagnosticInfo) || t == typeid(std::vector<DiagnosticInfo>))
     { return VariantType::DIAGNOSTIC_INFO; }
 
+  else if (t == typeid(ExtensionObject) || t == typeid(std::vector<ExtensionObject>))
+  {
+      return VariantType::EXTENSION_OBJECT;
+  }
+
   throw std::runtime_error(std::string("Unknown variant type '") + t.name() + "'.");
 }
 
@@ -602,6 +607,16 @@ void Variant::Visit(VariantVisitor & visitor) const
 
   else if (t == typeid(std::vector<DiagnosticInfo>))
     { visitor.Visit(any_cast<std::vector<DiagnosticInfo>>(Value)); }
+
+  else if (t == typeid(ExtensionObject))
+    {
+    visitor.Visit(any_cast<ExtensionObject>(Value)); // <- Endless loop
+    }
+
+  else if (t == typeid(std::vector<ExtensionObject>))
+    {
+    visitor.Visit(any_cast<std::vector<ExtensionObject>>(Value));
+    }
 
   else
     { throw std::runtime_error(std::string("Unknown variant type '") + t.name() + "'."); }

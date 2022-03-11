@@ -290,6 +290,13 @@ struct ExtensionObjectHeader
   ExtensionObjectHeader(ExtensionObjectId objectId, ExtensionObjectEncoding encoding);
 };
 
+struct ExtensionObject
+{
+    OpcUa::NodeId TypeId;
+    uint8_t Encoding;
+    OpcUa::ByteString Body;
+};
+
 } // namespace OpcUa
 
 #endif // __OPC_UA_MAPPING_TYPES_H__

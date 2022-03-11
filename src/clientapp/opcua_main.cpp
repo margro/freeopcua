@@ -421,11 +421,12 @@ void Browse(OpcUa::ViewServices & view, OpcUa::NodeId nodeId)
 
 struct VariantPrinter
 {
+    /*
   template <typename T>
   void PrintValue(const T & val)
   {
     std::cout << val;
-  }
+  }*/
 
   void PrintValue(const OpcUa::DiagnosticInfo & info)
   {

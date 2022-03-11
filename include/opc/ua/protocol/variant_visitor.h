@@ -72,6 +72,8 @@ public:
   virtual void Visit(const std::vector<Variant> & val) { Impl.OnContainer(val); }
   virtual void Visit(const DiagnosticInfo & val) { Impl.OnScalar(val); }
   virtual void Visit(const std::vector<DiagnosticInfo> & val) { Impl.OnContainer(val); }
+  virtual void Visit(const ExtensionObject& val) { Impl.OnScalar(val); }
+  virtual void Visit(const std::vector<ExtensionObject>& val) { Impl.OnContainer(val); }
 
 private:
   Delegate & Impl;

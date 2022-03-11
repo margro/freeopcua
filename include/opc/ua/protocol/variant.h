@@ -152,6 +152,8 @@ public:
   virtual void Visit(const std::vector<Variant> & val) = 0;
   virtual void Visit(const DiagnosticInfo & val) = 0;
   virtual void Visit(const std::vector<DiagnosticInfo> & val) = 0;
+  virtual void Visit(const ExtensionObject& val) = 0;
+  virtual void Visit(const std::vector<ExtensionObject>& val) = 0;
 };
 
 

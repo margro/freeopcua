@@ -99,13 +99,6 @@ struct XmlElement
     };
 */
 
-struct ExtensionObject
-{
-  OpcUa::NodeId TypeId;
-  uint8_t Encoding;
-  OpcUa::ByteString Body;
-};
-
 /* DISABLED
 
     // An identifier for a node in a UA server address space qualified with a complete namespace string.

@@ -379,10 +379,10 @@ public:
 
     ReadRequest request;
     request.Parameters = params;
-    const ReadResponse response = Send<ReadResponse>(request);
+    ReadResponse response = Send<ReadResponse>(request);
 
     LOG_DEBUG(Logger, "binary_client         | Read <--");
-
+    response.Results[0].SourceTimestamp = response.Header.Timestamp;
     return response.Results;
   }
 
